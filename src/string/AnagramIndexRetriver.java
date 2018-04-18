@@ -1,5 +1,6 @@
 package string;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,16 +10,16 @@ public class AnagramIndexRetriver {
 
 	public static void main(String[] args) {
 		String s= "cbaebabacd";
-		String p= "abc";
+		String t= "abc";
 		AnagramIndexRetriver a = new AnagramIndexRetriver();
-		List<Integer>result = a.findAnagrams(s, p);
+		List<Integer>result = a.findAnagrams(s, t);
 		for(int i : result){
 			System.out.println(i);
 		}
 	}
 
 	public List<Integer> findAnagrams(String s, String t) {
-        List<Integer> result = new LinkedList<>();
+        List<Integer> result = new ArrayList<>();
         if(t.length()> s.length()) return result;
         Map<Character, Integer> map = new HashMap<>();
         for(char c : t.toCharArray()){
